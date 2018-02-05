@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/miku"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Happy Birtthday, nana!"
+        android:textSize="32dp"
+        android:layout_margin="16dp"
+        android:layout_height="match_parent" />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="From, momo!"
+        android:textSize="32dp"
+        android:layout_margin="16dp"
+        android:gravity="bottom|right"
+        android:layout_height="match_parent" />
+
+
+</FrameLayout>

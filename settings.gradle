@@ -1,1 +1,1 @@
-include ':app', ':birthdaycard', ':birthdaycard'
+include ':app', ':birthdaycard', ':birthdaycard', ':relativeexam', ':exam2'

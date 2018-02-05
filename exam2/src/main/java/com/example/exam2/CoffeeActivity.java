@@ -10,9 +10,12 @@ import java.text.DecimalFormat;
 
 public class CoffeeActivity extends AppCompatActivity {
 
+    public static final int MIN_QUANTITY = 1;
+    public static final int DEFAULT_QUANTITY = 1;
+    public static final int COFFEE_PRICE = 3000;
     private TextView mQuantityTextView;
     private TextView mPriceTextView;
-    private int mQuantity = 1;
+    private int mQuantity = DEFAULT_QUANTITY;
 
     private DecimalFormat mFormat = new DecimalFormat("#,##0");
 
@@ -28,21 +31,23 @@ public class CoffeeActivity extends AppCompatActivity {
         Button plusButton = (Button) findViewById(R.id.plus_button);
         Button minesButton = (Button) findViewById(R.id.minus_button);
 
+        display();
+    }
+
+    private void display() {
         mQuantityTextView.setText("" + mQuantity);
-        mQuantityTextView.setText(mFormat.format(mQuantity * 3000 + "원"));
+        mQuantityTextView.setText(mFormat.format(mQuantity * COFFEE_PRICE + "원"));
     }
 
     public void minusButtonClicked(View view) {
         mQuantity--;
-        if (mQuantity < 1) {
-            mQuantity = 1;}
-        mQuantityTextView.setText("" + mQuantity);
-        mPriceTextView.setText(mFormat.format(mQuantity * 3000 + "원"));
+        if (mQuantity < MIN_QUANTITY) {
+            mQuantity = MIN_QUANTITY;}
+        display();
     }
 
     public void plusButtonClicked(View view) {
         mQuantity++;
-        mQuantityTextView.setText("" + mQuantity);
-        mPriceTextView.setText(mFormat.format(mQuantity * 3000 + "원"));
+        display();
     }
 }

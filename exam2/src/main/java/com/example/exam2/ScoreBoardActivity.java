@@ -18,7 +18,6 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         mScoreATextView = (TextView) findViewById(R.id.TeamA_score);
         mScoreBTextView = (TextView) findViewById(R.id.TeamB_score);
-
     }
 
     public void onButtonClicked(View view) {

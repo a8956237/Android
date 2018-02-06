@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -18,6 +19,7 @@ public class CoffeeActivity extends AppCompatActivity {
     private TextView mPriceTextView;
     private CheckBox mWippedCreamCheackBox;
     private int mQuantity = DEFAULT_QUANTITY;
+    private EditText mNameEditText;
 
     private DecimalFormat mFormat = new DecimalFormat("#,##0");
 
@@ -33,6 +35,7 @@ public class CoffeeActivity extends AppCompatActivity {
         Button plusButton = (Button) findViewById(R.id.plus_button);
         Button minesButton = (Button) findViewById(R.id.minus_button);
         mWippedCreamCheackBox = (CheckBox) findViewById(R.id.whipped_cream_check);
+        mNameEditText = (EditText) findViewById(R.id.name_edit);
 
         display();
     }
@@ -40,11 +43,13 @@ public class CoffeeActivity extends AppCompatActivity {
     private void display() {
         mQuantityTextView.setText("" + mQuantity);
 
-        String mesegge = "휘핑 크림 추가 여부 : " + mWippedCreamCheackBox.isChecked();
-        mesegge += "\n갯수 : " + mQuantity;
-        mesegge += "\r가격 : " + (mFormat.format(mQuantity * COFFEE_PRICE + "원"));
+        String message = "주문자 : " + mNameEditText.getText().toString();
+        message += "\n===============================";
+        message += "\n휘핑 크림 추가 여부 : " + mWippedCreamCheackBox.isChecked();
+        message += "\n갯수 : " + mQuantity;
+        message += "\r가격 : " + (mFormat.format(mQuantity * COFFEE_PRICE + "원"));
 
-        mQuantityTextView.setText(mesegge);
+        mQuantityTextView.setText(message);
     }
 
     public void minusButtonClicked(View view) {
